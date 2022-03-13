@@ -416,11 +416,8 @@ img {
 }
 
 .footer__icon {
-  /*font-size: 1.5rem;*/
-  /*color: #fff;*/
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  color: var(--second-color);
+  font-size: 1.0rem;
+  color: #fff;
   margin: 0 var(--mb-2);
 }
 

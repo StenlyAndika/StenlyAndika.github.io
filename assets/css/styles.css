@@ -9,6 +9,7 @@
   /* HSL color mode */
   --hue-color: 224;
   --first-color: hsl(var(--hue-color), 89%, 60%);
+  /*--first-color: #9B0000;*/
   --second-color: hsl(var(--hue-color), 56%, 12%);
   /*===== Fuente y tipografia =====*/
   --body-font: 'Poppins', sans-serif;
@@ -190,7 +191,7 @@ img {
 /*===== HOME =====*/
 .home {
   position: relative;
-  row-gap: 5rem;
+  row-gap: 3rem;
   padding: 4rem 0 5rem;
 }
 
@@ -215,7 +216,7 @@ img {
 .home__social-icon {
   width: max-content;
   margin-bottom: var(--mb-2);
-  font-size: 1.5rem;
+  font-size: 40px;
   color: var(--second-color);
 }
 
@@ -321,19 +322,35 @@ img {
 }
 
 .skills__html {
-  width: 95%;
+  width: 85%;
 }
 
 .skills__css {
-  width: 85%;
+  width: 75%;
 }
 
 .skills__js {
   width: 65%;
 }
 
-.skills__ux {
-  width: 85%;
+.skills__bootstrap {
+  width: 70%;
+}
+
+.skills__php {
+  width: 80%;
+}
+
+.skills__codeigniter {
+  width: 80%;
+}
+
+.skills__java {
+  width: 90%;
+}
+
+.skills__database {
+  width: 80%;
 }
 
 .skills__img {
@@ -399,8 +416,11 @@ img {
 }
 
 .footer__icon {
-  font-size: 1.5rem;
-  color: #fff;
+  /*font-size: 1.5rem;*/
+  /*color: #fff;*/
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--second-color);
   margin: 0 var(--mb-2);
 }
 
@@ -411,6 +431,7 @@ img {
 .lbl__proyek{
   padding-top: 15px;
   padding-left: 5px;
+  color: var(--second-color);
   font-family: var(--body-font);
   font-size: 1.2rem;
 }
@@ -519,7 +540,7 @@ img {
     text-align: initial;
   }
   .work__container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
   }
 }

@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+        <link rel="stylesheet" href="assets/vendor/aos/aos.css">
         <link rel="stylesheet" href="assets/css/styles.css">
 
         <title>Portfolio Stenly Andika</title>
@@ -18,10 +21,10 @@
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active">Beranda</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">Tentang Saya</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Kemampuan</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Riwayat Proyek</a></li>
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About Me</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Project</a></li>
                     </ul>
                 </div>
 
@@ -35,139 +38,121 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hallo,<br>Saya <span class="home__title-color">Stenly Andika</span><br>Seorang Desktop & Web Developer.</h1>
-                    <a href="#" class="button">Sosial Media Saya</a>
+                    <h1 class="home__title" data-aos="fade-left" data-aos-duration="1200">Hello,<br>I Am <span class="home__title-color">Stenly Andika,</span><br>A Beginner Full-Stack Developer.</h1>
+                    <a href="#" class="button" data-aos="fade-up" data-aos-duration="1200">Contact Me</a>
                 </div>
-
-                <div class="home__social">
-                    <a href="https://web.facebook.com/Stenly.Andika24/" target="-blank" class="home__social-icon"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://github.com/StenlyAndika" target="blank" class="home__social-icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/stenly-andika-4430b6166/" target="blank" class="home__social-icon"><i class="fa-brands fa-linkedin"></i></a>
+                <div class="home__social" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="https://web.facebook.com/Stenly.Andika24/" target="-blank" class="home__social-icon"><iconify-icon icon="ic:baseline-facebook"></iconify-icon></a>
+                    <a href="https://github.com/StenlyAndika" target="blank" class="home__social-icon"><iconify-icon icon="mdi:github"></iconify-icon></a>
+                    <a href="https://wa.me/+6281315414388" target="blank" class="home__social-icon"><iconify-icon icon="ic:baseline-whatsapp"></iconify-icon></a>
                 </div>
             </section>
 
             <!--===== ABOUT =====-->
             <section class="about section " id="about">
-                <h2 class="section-title">Tentang Saya</h2>
+                <h2 class="section-title">About Me</h2>
 
                 <div class="about__container bd-grid">
-                    <div class="about__img">
+                    <div class="about__img" data-aos="fade-right" data-aos-duration="1200">
                         <img src="assets/img/about.jpg" alt="">
                     </div>
-                    
-                    <div>
-                        <h2 class="about__subtitle">Nama saya Stenly Andika</h2>
-                        <p class="about__text">Saya adalah Fresh Graduate dengan jenjang Diploma III (D3) prodi Manajemen Informatika dari Akademi Manejemen Informatika dan Komputer (AMIK) Depati Parbo Kerinci. Saya ingin dan akan terus belajar untuk mengembangkan diri sebagai seorang Developer Web dan Desktop. Saya sangat sadar bahwa adapun kemampuan yang saya miliki saat ini sangat belum cukup untuk bisa dibilang sebagai seorang Developer, tetapi saya akan terus mempelajari apa yang belum saya miliki saat ini. Terimakasih.</p>           
+                    <div data-aos="fade-up" data-aos-duration="1200">
+                        <h2 class="about__subtitle">My Name's Stenly Andika</h2>
+                        <p class="about__text" style="font-size: 18px;">I am a beginner Full-Stack Developer, with intermediate level of experience in Desktop and Web Development, and beginner level of experience in Mobile Development. <br><br>I am passionate about staying up-to-date with the latest industry trends and eager to connect with industry professionals and explore new job opportunities in the field of desktop, web, and mobile app development. <br><br>Feel free to contact me if you want to learn more about my experience or if you have any questions.</p>
                     </div>                                   
                 </div>
             </section>
 
             <!--===== SKILLS =====-->
             <section class="skills section" id="skills">
-                <h2 class="section-title">Kemampuan</h2>
-
+                <h2 class="section-title">Skills</h2>
+                <h2 class="skills__subtitle" style="text-align: center;" data-aos="zoom-in" data-aos-duration="1500">These are some of the tools that i used in developing an app.</h2>
                 <div class="skills__container bd-grid">          
-                    <div>
-                        <h2 class="skills__subtitle">Front End</h2>
-                        <p class="skills__text">Front End adalah salah satu bagian dari website yang menampilkan tampilan website kepada para pengguna.</p>
+                    <div data-aos="fade-right" data-aos-duration="1500">
+                        <h2 class="skills__subtitle">Desktop</h2>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <i class="fa-solid fa-code skills__icon"></i>
-                                <span class="skills__name">HTML</span>
+                                <iconify-icon icon="mdi:language-java" class="skills__icon"></iconify-icon>
+                                <span class="skills__name">Java</span>
                             </div>
-                            <div class="skills__bar skills__html">
-
-                            </div>
+                            <div class="skills__bar" style="width: 80%;"></div>
                             <div>
-                                <span class="skills__percentage">85%</span>
+                                <span class="skills__percentage">80%</span>
                             </div>
                         </div>
+                        <h2 class="skills__subtitle">Web</h2>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <i class="fa-solid fa-file-code skills__icon"></i>
-                                <span class="skills__name">CSS</span>
+                                <iconify-icon icon="mdi:language-php" class="skills__icon"></iconify-icon>
+                                <span class="skills__name">Native PHP</span>
                             </div>
-                            <div class="skills__bar skills__css">
-                                
-                            </div>
+                            <div class="skills__bar" style="width: 75%;"></div>
                             <div>
                                 <span class="skills__percentage">75%</span>
                             </div>
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <i class="fa-brands fa-js skills__icon"></i>
-                                <span class="skills__name">JAVASCRIPT</span>
+                                <iconify-icon icon="simple-icons:codeigniter" class="skills__icon"></iconify-icon>
+                                <span class="skills__name">Codeigniter 3</span>
                             </div>
-                            <div class="skills__bar skills__js">
-                                
-                            </div>
+                            <div class="skills__bar" style="width: 80%;"></div>
                             <div>
-                                <span class="skills__percentage">65%</span>
+                                <span class="skills__percentage">80%</span>
                             </div>
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <i class="fa-brands fa-bootstrap skills__icon"></i>
-                                <span class="skills__name">BOOTSTRAP 4</span>
+                                <iconify-icon icon="mdi:laravel" class="skills__icon"></iconify-icon>
+                                <span class="skills__name">Laravel 8</span>
                             </div>
-                            <div class="skills__bar skills__bootstrap">
-                                
-                            </div>
+                            <div class="skills__bar" style="width: 85%;"></div>
                             <div>
-                                <span class="skills__percentage">70%</span>
+                                <span class="skills__percentage">85%</span>
                             </div>
                         </div>
                     </div>
-                    <div>
-                    	<h2 class="skills__subtitle">Back End</h2>
-                        <p class="skills__text">Back-End adalah bagian website yang mengelola logika suatu website.</p>
+                    <div data-aos="fade-left" data-aos-duration="1500">
+                        <h2 class="skills__subtitle">Mobile</h2>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <i class="fa-brands fa-php skills__icon"></i>
-                                <span class="skills__name">PHP 7</span>
+                                <iconify-icon icon="ri:flutter-fill" class="skills__icon"></iconify-icon>
+                                <span class="skills__name">Flutter</span>
                             </div>
-                            <div class="skills__bar skills__php">
-                                
+                            <div class="skills__bar" style="width: 50%;"></div>
+                            <div>
+                                <span class="skills__percentage">50%</span>
                             </div>
+                        </div>
+                        <h2 class="skills__subtitle">Database & Tools</h2>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <iconify-icon icon="ph:file-sql-fill" class="skills__icon"></iconify-icon>
+                                <span class="skills__name">SQL</span>
+                            </div>
+                            <div class="skills__bar" style="width: 50%;"></div>
+                            <div>
+                                <span class="skills__percentage">50%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <iconify-icon icon="mdi:microsoft-visual-studio" class="skills__icon"></iconify-icon>
+                                <span class="skills__name">Visual Studio Code</span>
+                            </div>
+                            <div class="skills__bar" style="width: 80%;"></div>
                             <div>
                                 <span class="skills__percentage">80%</span>
                             </div>
                         </div>
                         <div class="skills__data">
                             <div class="skills__names">
-                                <i class="fa-brands fa-free-code-camp skills__icon"></i>
-                                <span class="skills__name">CODEIGNITER 3</span>
+                                <iconify-icon icon="mdi:git" class="skills__icon"></iconify-icon>
+                                <span class="skills__name">Github</span>
                             </div>
-                            <div class="skills__bar skills__codeigniter">
-                                
-                            </div>
+                            <div class="skills__bar" style="width: 50%;"></div>
                             <div>
-                                <span class="skills__percentage">80%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fa-brands fa-java skills__icon"></i>
-                                <span class="skills__name">JAVA (DEKSTOP)</span>
-                            </div>
-                            <div class="skills__bar skills__java">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">90%</span>
-                            </div>
-                        </div>
-                        <div class="skills__data">
-                            <div class="skills__names">
-                                <i class="fa-solid fa-database skills__icon"></i>
-                                <span class="skills__name">MYSQL</span>
-                            </div>
-                            <div class="skills__bar skills__database">
-                                
-                            </div>
-                            <div>
-                                <span class="skills__percentage">80%</span>
+                                <span class="skills__percentage">50%</span>
                             </div>
                         </div>
                     </div>
@@ -176,29 +161,80 @@
 
             <!--===== WORK =====-->
             <section class="work section" id="work">
-                <h2 class="section-title">Riwayat Proyek</h2>
-
-                <div class="work__container bd-grid">
-                    <a href="" class="work__img">
-                        <img src="assets/img/work3.jpg" alt="">
-                        <p class="lbl__proyek">Aplikasi Rekam Medis Client Server Puskesmas Siulak Mukai.</p>
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work1.jpg" alt="">
-                        <p class="lbl__proyek">Website Pendaftaran Peserta Pelatihan di UPTD BLK Kabupaten Kerinci.</p>
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work4.jpg" alt="">
-                        <p class="lbl__proyek">Website E-Learning SMK N 5 Sungai Penuh.</p>
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work5.jpg" alt="">
-                        <p class="lbl__proyek">Website Pendaftaran Siswa Baru MTsN Negeri Semerah.</p>
-                    </a>
-                    <a href="" class="work__img">
-                        <img src="assets/img/work2.jpg" alt="">
-                        <p class="lbl__proyek">Website Pendataan Donor Darah RSU Mayjen H.A Thalib Kab. Kerinci.</p>
-                    </a>
+                <h2 class="section-title">Project</h2>
+                <div class="work__container bd-grid" style="text-align: left;">
+                    <div data-aos="fade-up" data-aos-duration="1500">
+                        <a href="#" class="work__img">
+                            <img src="assets/img/work1.jpg" alt="">
+                        </a>
+                    </div>
+                    <div data-aos="fade-left" data-aos-duration="1500">
+                        <h2 class="skills__subtitle">Client Server E-Medical Record for Puskesmas Siulak Mukai</h2>
+                        <h4 class="skills__text">
+                            <table border="0">
+                                <tr>
+                                    <td>Platform</td>
+                                    <td>:</td>
+                                    <td>Desktop</td>
+                                </tr>
+                                <tr>
+                                    <td>Tools</td>
+                                    <td>:</td>
+                                    <td>JavaFX 8 - MySQL</td>
+                                </tr>
+                            </table>
+                        </h4>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="1500">
+                        <a href="https://sungaipenuhkota.go.id" target="_blank" class="work__img">
+                            <img src="assets/img/work2.jpg" alt="">
+                        </a>
+                    </div>
+                    <div data-aos="fade-left" data-aos-duration="1500">
+                        <h2 class="skills__subtitle">Website Kota Sungai Penuh</h2>
+                        <h4 class="skills__text">
+                            <table border="0">
+                                <tr>
+                                    <td>Platform</td>
+                                    <td>:</td>
+                                    <td>Web</td>
+                                </tr>
+                                <tr>
+                                    <td>Tools</td>
+                                    <td>:</td>
+                                    <td>Laravel 8 - MySQL</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="https://sungaipenuhkota.go.id" target="_blank">Visit Sites</a></td>
+                                </tr>
+                            </table>
+                        </h4>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="1500">
+                        <a href="http://pkmsungaipenuh.sungaipenuhkota.go.id/" target="_blank" class="work__img">
+                            <img src="assets/img/work3.jpg" alt="">
+                        </a>
+                    </div>
+                    <div data-aos="fade-left" data-aos-duration="1500">
+                        <h2 class="skills__subtitle">Website Puskesmas Sungai Penuh</h2>
+                        <h4 class="skills__text">
+                            <table border="0">
+                                <tr>
+                                    <td>Platform</td>
+                                    <td>:</td>
+                                    <td>Web</td>
+                                </tr>
+                                <tr>
+                                    <td>Tools</td>
+                                    <td>:</td>
+                                    <td>CodeIgniter 3 - MySQL</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://pkmsungaipenuh.sungaipenuhkota.go.id/" target="_blank">Visit Sites</a></td>
+                                </tr>
+                            </table>
+                        </h4>
+                    </div>
                 </div>
             </section>
         </main>
@@ -207,19 +243,23 @@
         <footer class="footer">
             <p class="footer__title">Stenly Andika</p>
             <div class="footer__social">
-                <a href="" class="footer__icon"><i class="fa-brands fa-whatsapp"></i> 081315414388</a>
+                <a href="https://wa.me/+6281315414388" target="_blank" class="footer__icon"><iconify-icon icon="ic:baseline-whatsapp"></iconify-icon> +6281315414388</a>
                 <br>
-                <a href="" class="footer__icon"><i class="fa-solid fa-envelope"></i> stenly.andika@gmail.com</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=stenly.andika@gmail.com" target="_blank" class="footer__icon"><iconify-icon icon="bxl:gmail"></iconify-icon> stenly.andika@gmail.com</a>
             </div>
             <p class="footer__copy">&#169; StenlyAndika. All rigths reserved</p>
         </footer>
 
-
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
-
         <!--===== MAIN JS =====-->
+        <script src="assets/vendor/jquery/jquery.min.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
         <script src="assets/js/main.js"></script>
-        <script src="https://kit.fontawesome.com/d6482bd15d.js" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function() {
+                AOS.init({
+                    once: true
+                });
+            })
+        </script>
     </body>
 </html>

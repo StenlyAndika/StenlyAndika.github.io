@@ -36,16 +36,14 @@
 <body class="h-full bg-gray-100 select-none">
     <div class="max-w-[414px] mx-auto bg-white min-h-screen relative shadow-xl" x-data="guestBookWizard()">
         <!-- Header -->
-        <div class="bg-primary px-6 py-4 text-white">
-            <div class="text-center mb-2">
-                <h1 class="text-2xl font-bold mb-2">Buku Tamu Digital</h1>
+        <div class="bg-primary px-6 py-2 text-white">
+            <div class="text-center mb-1">
+                <h1 class="text-xl font-bold">Buku Tamu Digital</h1>
                 <p class="text-md font-bold opacity-90">Dinas Pemberdayaan Masyarakat dan Desa Kabupaten Kerinci</p>
-                <!-- <p class="text-md mt-4 opacity-90"
-                    x-text="currentStep === 1 ? 'Pilih tujuan kunjungan' : 'Isi data pribadi'"></p> -->
             </div>
 
             <!-- Progress -->
-            <div class="flex items-center justify-center space-x-4">
+            <div class="flex items-center justify-center space-x-4 mb-1">
                 <div class="flex items-center space-x-2">
                     <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300"
                         :class="currentStep >= 1 ? 'bg-white text-primary' : 'bg-white/30'">
@@ -73,10 +71,10 @@
             <!-- Step 1 -->
             <div x-show="currentStep === 1" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-x-4" x-transition:enter-end="opacity-100 translate-x-0">
-                <p class="text-md font-bold opacity-90 text-center mb-4 mt-2 text-secondary">Pilih tujuan kunjungan</p>
+                <p class="text-md font-bold opacity-90 text-center mb-2 mt-1 text-secondary">Pilih tujuan kunjungan</p>
                 <form @submit.prevent="nextStep" class="space-y-6">
                     <!-- Status Section -->
-                    <div class="bg-blue-50 rounded-2xl p-5">
+                    <div class="bg-main rounded-2xl p-5">
                         <h3 class="font-bold text-gray-800 mb-1 flex items-center justify-center text-sm">
                             Status Ketersediaan Pejabat
                         </h3>
@@ -84,34 +82,46 @@
                             <p id="tanggal"></p>
                         </h3>
 
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-700">Kepala Dinas</span>
-                                <span class="text-red-700 bg-red-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
-                                    <div class="w-1.5 h-1.5 bg-red-500 rounded-full mr-1.5"></div>
-                                    Tidak Ada
-                                </span>
+                        <div class="space-y-1.5">
+                            <div>
+                                <span class="text-sm font-bold text-gray-700">Kepala Dinas</span>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">Drs. Sahril Hayadi, M.Si</span>
+                                    <span class="text-red-700 bg-red-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
+                                        <div class="w-1.5 h-1.5 bg-red-500 rounded-full mr-1.5"></div>
+                                        Tidak Ada
+                                    </span>
+                                </div>
                             </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-700">Kabid Keuangan</span>
-                                <span class="text-green-700 bg-green-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
-                                    <div class="w-1.5 h-1.5 bg-green-500 rounded-full mr-1.5"></div>
-                                    Ada
-                                </span>
+                            <div>
+                                <span class="text-sm font-bold text-gray-700">Kepala Bidang Keuangan dan Aset</span>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">Kemdepit, S.Sos., M.Si</span>
+                                    <span class="text-green-700 bg-green-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
+                                        <div class="w-1.5 h-1.5 bg-green-500 rounded-full mr-1.5"></div>
+                                        Ada
+                                    </span>
+                                </div>
                             </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-700">Kabid Pemdes</span>
-                                <span class="text-green-700 bg-green-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
-                                    <div class="w-1.5 h-1.5 bg-green-500 rounded-full mr-1.5"></div>
-                                    Ada
-                                </span>
+                            <div>
+                                <span class="text-sm font-bold text-gray-700">Kepala Bidang Pemerintahan Desa</span>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">Dede Setiawan, S.Kom., M.Si</span>
+                                    <span class="text-green-700 bg-green-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
+                                        <div class="w-1.5 h-1.5 bg-green-500 rounded-full mr-1.5"></div>
+                                        Ada
+                                    </span>
+                                </div>
                             </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-sm text-gray-700">Kabid PM</span>
-                                <span class="text-red-700 bg-red-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
-                                    <div class="w-1.5 h-1.5 bg-red-500 rounded-full mr-1.5"></div>
-                                    Tidak Ada
-                                </span>
+                            <div>
+                                <span class="text-sm font-bold text-gray-700">Kepala Bidang Pemberdayaan Masyarakat</span>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700">Weni Susanti, S.Sos., MM</span>
+                                    <span class="text-red-700 bg-red-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
+                                        <div class="w-1.5 h-1.5 bg-red-500 rounded-full mr-1.5"></div>
+                                        Tidak Ada
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -126,9 +136,9 @@
                                 class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800 bg-white appearance-none">
                                 <option value="">Pilih bidang tujuan</option>
                                 <option value="sekretariat">Sekretariat</option>
-                                <option value="keuaset">Bidang Keuangan dan Aset</option>
-                                <option value="pemdes">Bidang Pemerintahan Desa</option>
-                                <option value="pm">Bidang Pemberdayaan Masyarakat</option>
+                                <option value="keuaset">Keuangan dan Aset</option>
+                                <option value="pemdes">Pemerintahan Desa</option>
+                                <option value="pm">Pemberdayaan Masyarakat</option>
                             </select>
                             <div class="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
                                 <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -143,7 +153,7 @@
             <!-- Step 2 -->
             <div x-show="currentStep === 2" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-x-4" x-transition:enter-end="opacity-100 translate-x-0">
-                <p class="text-md font-bold opacity-90 text-center mb-4 mt-2 text-secondary">Isi data pribadi</p>
+                <p class="text-md font-bold opacity-90 text-center mb-2 mt-1 text-secondary">Isi data pribadi</p>
                 <form @submit.prevent="submitForm" class="space-y-5">
                     <div>
                         <label class="block text-sm font-bold text-gray-800 mb-2">
@@ -257,39 +267,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script>
-        function tampilkanTanggal() {
-            const opsi = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Jakarta' };
-            const tanggal = new Intl.DateTimeFormat('id-ID', opsi).format(new Date());
-            $('#tanggal').text(tanggal);
-        }
-        $(document).ready(function() { tampilkanTanggal(); });
-
-        function guestBookWizard() {
-            return {
-                currentStep: 1,
-                form: { bidang: '', nama: '', alamat: '', asal: '', keperluan: '' },
-                isSubmitting: false,
-                showSuccess: false,
-                nextStep() { if (this.currentStep < 2 && this.form.bidang) this.currentStep++; },
-                previousStep() { if (this.currentStep > 1) this.currentStep--; },
-                submitForm() {
-                    if (!this.form.nama || !this.form.alamat || !this.form.asal || !this.form.keperluan) return;
-                    this.isSubmitting = true;
-                    const self = this;
-                    setTimeout(function() {
-                        console.log('Guest Book Entry:', { ...self.form, timestamp: new Date().toISOString(), id: Date.now().toString() });
-                        self.isSubmitting = false;
-                        self.showSuccess = true;
-                    }, 1500);
-                },
-                resetForm() {
-                    this.currentStep = 1;
-                    this.form = { bidang: '', nama: '', alamat: '', asal: '', keperluan: '' };
-                }
-            }
-        }
-    </script>
+    <script src="./guest-book-assets/app.js"></script>
 </body>
 
 </html>

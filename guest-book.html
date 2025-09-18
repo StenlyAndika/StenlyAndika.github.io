@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tamu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="h-full bg-gradient-to-br from-slate-200 to-slate-300 sm:flex sm:items-center sm:justify-center sm:p-4">
+    <!-- Mobile Container - Responsive Width -->
+    <div class="w-full sm:max-w-sm sm:mx-auto min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 sm:shadow-2xl sm:border sm:border-gray-300 overflow-hidden">
+        <div class="min-h-full flex flex-col" x-data="guestBookWizard()">
+            <!-- Header with Progress -->
+            <div class="bg-white shadow-sm border-b border-gray-200">
+                <div class="px-4 py-6">
+                    <h1 class="text-2xl font-bold text-gray-900 text-center">📝 Buku Tamu</h1>
+                    <p class="text-sm text-gray-600 text-center mt-1">
+                        <span x-text="currentStep === 1 ? 'Pilih tujuan kunjungan' : 'Lengkapi data diri'"></span>
+                    </p>
+
+                    <!-- Progress Bar -->
+                    <div class="mt-4 flex items-center justify-center">
+                        <div class="flex items-center space-x-2">
+                            <!-- Step 1 -->
+                            <div class="flex items-center">
+                                <div
+                                    class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors"
+                                    :class="currentStep >= 1 ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-500'"
+                                >
+                                    1
+                                </div>
+                                <span class="ml-2 text-xs font-medium text-gray-600">Tujuan</span>
+                            </div>
+
+                            <!-- Connector -->
+                            <div class="w-8 h-0.5 bg-gray-300 mx-2"></div>
+
+                            <!-- Step 2 -->
+                            <div class="flex items-center">
+                                <div
+                                    class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-colors"
+                                    :class="currentStep >= 2 ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-500'"
+                                >
+                                    2
+                                </div>
+                                <span class="ml-2 text-xs font-medium text-gray-600">Data Diri</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="flex-1 px-4 py-6">
+                <!-- Step 1: Status & Bidang Tujuan -->
+                <div x-show="currentStep === 1" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-x-4" x-transition:enter-end="opacity-100 translate-x-0">
+                    <form @submit.prevent="nextStep" class="space-y-6 bg-white rounded-lg shadow-md p-6">
+                        <!-- Status Ketersediaan -->
+                        <div>
+                            <h3 class="block text-sm font-semibold text-gray-700 mb-3">
+                                Status Ketersediaan Pejabat
+                            </h3>
+                            <div class="bg-gray-50 rounded-lg p-4 space-y-3 border border-gray-200">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700 font-medium">Kepala Dinas</span>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+                                        <span class="text-xs font-semibold text-red-600 bg-red-100 px-2 py-1 rounded-full">Tidak Ada</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700 font-medium">Kabid Keuangan</span>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                        <span class="text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded-full">Ada</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700 font-medium">Kabid Pemdes</span>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                                        <span class="text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded-full">Ada</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm text-gray-700 font-medium">Kabid PM</span>
+                                    <div class="flex items-center">
+                                        <div class="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
+                                        <span class="text-xs font-semibold text-red-600 bg-red-100 px-2 py-1 rounded-full">Tidak Ada</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bidang Tujuan -->
+                        <div>
+                            <label for="bidang" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Bidang Tujuan <span class="text-red-500">*</span>
+                            </label>
+                            <select
+                                id="bidang"
+                                x-model="form.bidang"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 bg-white"
+                            >
+                                <option value="">Pilih bidang tujuan</option>
+                                <option value="sekretariat">Sekretariat</option>
+                                <option value="keuaset">Bidang Keuangan dan Aset</option>
+                                <option value="pemdes">Bidang Pemerintahan Desa</option>
+                                <option value="pm">Bidang Pemberdayaan Masyarakat</option>
+                            </select>
+                        </div>
+
+                        <!-- Next Button -->
+                        <button
+                            type="submit"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                        >
+                            Lanjutkan ➡️
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Step 2: Personal Information -->
+                <div x-show="currentStep === 2" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-x-4" x-transition:enter-end="opacity-100 translate-x-0">
+                    <form @submit.prevent="submitForm" class="space-y-6 bg-white rounded-lg shadow-md p-6">
+                        <!-- Nama -->
+                        <div>
+                            <label for="nama" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Nama Lengkap <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="nama"
+                                x-model="form.nama"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500"
+                                placeholder="Masukkan nama lengkap Anda"
+                            >
+                        </div>
+
+                        <!-- Alamat -->
+                        <div>
+                            <label for="alamat" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Alamat <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="alamat"
+                                x-model="form.alamat"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500"
+                                placeholder="Masukkan alamat lengkap"
+                            >
+                        </div>
+
+                        <!-- Asal Instansi/Desa -->
+                        <div>
+                            <label for="asal" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Asal Instansi/Desa <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="asal"
+                                x-model="form.asal"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500"
+                                placeholder="Instansi/Desa asal Anda"
+                            >
+                        </div>
+
+                        <!-- Keperluan -->
+                        <div>
+                            <label for="keperluan" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Keperluan <span class="text-red-500">*</span>
+                            </label>
+                            <textarea
+                                id="keperluan"
+                                x-model="form.keperluan"
+                                required
+                                rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-gray-900 placeholder-gray-500 resize-none"
+                                placeholder="Jelaskan keperluan kunjungan Anda..."
+                            ></textarea>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="flex gap-3">
+                            <button
+                                type="button"
+                                @click="previousStep"
+                                class="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                            >
+                                ⬅️ Kembali
+                            </button>
+                            <button
+                                type="submit"
+                                :disabled="isSubmitting"
+                                class="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                                :class="{'opacity-50 cursor-not-allowed': isSubmitting}"
+                            >
+                                <span x-show="!isSubmitting">✅ Daftar</span>
+                                <span x-show="isSubmitting">⏳ Memproses...</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Success Modal -->
+            <div x-show="showSuccess"
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0"
+                 x-transition:enter-end="opacity-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100"
+                 x-transition:leave-end="opacity-0"
+                 class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center px-4 z-50"
+                 style="display: none;">
+                <div class="bg-white rounded-lg p-6 max-w-sm w-full shadow-xl">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">🎉</div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Berhasil Terdaftar!</h3>
+                        <p class="text-gray-600 mb-4">Terima kasih telah mengisi buku tamu. Data Anda telah tersimpan.</p>
+                        <button
+                            @click="showSuccess = false; resetForm()"
+                            class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+                        >
+                            Tutup
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function guestBookWizard() {
+            return {
+                currentStep: 1,
+                form: {
+                    bidang: '',
+                    nama: '',
+                    alamat: '',
+                    asal: '',
+                    keperluan: ''
+                },
+                isSubmitting: false,
+                showSuccess: false,
+
+                nextStep() {
+                    if (this.currentStep < 2) {
+                        this.currentStep++;
+                    }
+                },
+
+                previousStep() {
+                    if (this.currentStep > 1) {
+                        this.currentStep--;
+                    }
+                },
+
+                submitForm() {
+                    this.isSubmitting = true;
+
+                    // Simulate API call
+                    setTimeout(() => {
+                        console.log('Form submitted:', this.form);
+                        this.isSubmitting = false;
+                        this.showSuccess = true;
+                    }, 1500);
+                },
+
+                resetForm() {
+                    this.currentStep = 1;
+                    this.form = {
+                        bidang: '',
+                        nama: '',
+                        alamat: '',
+                        asal: '',
+                        keperluan: ''
+                    };
+                }
+            }
+        }
+    </script>
+</body>
+</html>

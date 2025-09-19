@@ -8,7 +8,7 @@ $(document).ready(function() { tampilkanTanggal(); });
 function guestBookWizard() {
     return {
         currentStep: 1,
-        form: { bidang: '', nama: '', alamat: '', asal: '', keperluan: '' },
+        form: { bidang: '', nama: '', nowa: '', alamat: '', asal: '', keperluan: '' },
         isSubmitting: false,
         showSuccess: false,
         nextStep() { if (this.currentStep < 2 && this.form.bidang) this.currentStep++; },

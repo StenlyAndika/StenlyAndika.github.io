@@ -4,28 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buku Tamu Digital</title>
+    <title>SISATU DPMD Kerinci</title>
+    <link rel="icon" href="data:,">
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        main: '#F7F7FF',
-                        dark: '#E4E4FC',
-                        primary: '#008CFF',
-                        secondary: '#FD3550',
-                        tertiary: '#41E099',
-                        accent: '#FFC107',
-                        hover: '#F2F9FF',
+                        primary: '#3338A0',
                     },
                     fontFamily: {
-                        display: ['Inter', 'ui-sans-serif', 'system-ui'],
+                        display: ['Roboto', 'ui-sans-serif', 'system-ui'],
                     },
                 }
             }
@@ -33,20 +28,19 @@
     </script>
 </head>
 
-<body class="h-full bg-gray-100 select-none">
+<body class="h-full select-none">
     <div class="max-w-[414px] mx-auto bg-white min-h-screen relative shadow-xl" x-data="guestBookWizard()">
         <!-- Header -->
-        <div class="bg-primary px-6 py-2 text-white">
-            <div class="text-center mb-1">
-                <h1 class="text-xl font-bold">Buku Tamu Digital</h1>
-                <p class="text-md font-bold opacity-90">Dinas Pemberdayaan Masyarakat dan Desa Kabupaten Kerinci</p>
+        <div class="bg-primary px-6 text-white">
+            <div class="text-center py-2">
+                <p class="text-md font-bold text-center">Sistem Informasi Administrasi Buku Tamu (SISATU) DPMD Kerinci</p>
             </div>
-
-            <!-- Progress -->
-            <div class="flex items-center justify-center space-x-4 mb-1">
+        </div>
+        <!-- Progress -->
+        <div class="flex items-center w-full justify-center space-x-4 py-1 border-b border-gray-200 bg-white px-6">
                 <div class="flex items-center space-x-2">
                     <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300"
-                        :class="currentStep >= 1 ? 'bg-white text-primary' : 'bg-white/30'">
+                        :class="currentStep >= 1 ? 'bg-primary text-white' : 'bg-primary/30'">
                         <span x-show="currentStep > 1">✓</span>
                         <span x-show="currentStep <= 1">1</span>
                     </div>
@@ -54,27 +48,25 @@
                 </div>
 
                 <div class="w-8 h-0.5 rounded-full transition-all duration-500"
-                    :class="currentStep >= 2 ? 'bg-white' : 'bg-white/30'"></div>
+                    :class="currentStep >= 2 ? 'bg-primary' : 'bg-primary/30'"></div>
 
                 <div class="flex items-center space-x-2">
                     <div class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300"
-                        :class="currentStep >= 2 ? 'bg-white text-primary' : 'bg-white/30'">
+                        :class="currentStep >= 2 ? 'bg-primary text-white' : 'bg-primary/30'">
                         2
                     </div>
-                    <span class="text-xs font-medium opacity-90">Data</span>
+                    <span class="text-xs font-medium opacity-90">Data kunjungan</span>
                 </div>
             </div>
-        </div>
 
         <!-- Content -->
         <div class="px-6 py-2 bg-white min-h-screen">
             <!-- Step 1 -->
             <div x-show="currentStep === 1" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-x-4" x-transition:enter-end="opacity-100 translate-x-0">
-                <p class="text-md font-bold opacity-90 text-center mb-2 mt-1 text-secondary">Pilih tujuan kunjungan</p>
-                <form @submit.prevent="nextStep" class="space-y-6">
+                <form @submit.prevent="nextStep" class="space-y-6 mt-2">
                     <!-- Status Section -->
-                    <div class="bg-main rounded-2xl p-5">
+                    <div class="bg-gray-100 rounded-2xl p-4">
                         <h3 class="font-bold text-gray-800 mb-1 flex items-center justify-center text-sm">
                             Status Ketersediaan Pejabat
                         </h3>
@@ -133,7 +125,7 @@
                         </label>
                         <div class="relative">
                             <select x-model="form.bidang" required
-                                class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800 bg-white appearance-none">
+                                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800 bg-white appearance-none">
                                 <option value="">Pilih bidang tujuan</option>
                                 <option value="sekretariat">Sekretariat</option>
                                 <option value="keuaset">Keuangan dan Aset</option>
@@ -153,41 +145,50 @@
             <!-- Step 2 -->
             <div x-show="currentStep === 2" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-x-4" x-transition:enter-end="opacity-100 translate-x-0">
-                <p class="text-md font-bold opacity-90 text-center mb-2 mt-1 text-secondary">Isi data pribadi</p>
-                <form @submit.prevent="submitForm" class="space-y-5">
+                <!-- <p class="text-md font-bold opacity-90 text-center mb-2 mt-1 text-secondary">Isi data pribadi</p> -->
+                <form @submit.prevent="submitForm" class="space-y-4 mt-2">
                     <div>
-                        <label class="block text-sm font-bold text-gray-800 mb-2">
+                        <label class="block text-sm font-bold text-gray-800 mb-1">
                             Nama Lengkap <span class="text-red-500">*</span>
                         </label>
                         <input type="text" x-model="form.nama" required
-                            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800"
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800"
                             placeholder="Masukkan nama lengkap">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-bold text-gray-800 mb-2">
+                        <label class="block text-sm font-bold text-gray-800 mb-1">
                             Alamat <span class="text-red-500">*</span>
                         </label>
                         <input type="text" x-model="form.alamat" required
-                            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800"
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800"
                             placeholder="Alamat lengkap">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-bold text-gray-800 mb-2">
+                        <label class="block text-sm font-bold text-gray-800 mb-1">
+                            Nomor WA <span class="text-red-500">*</span>
+                        </label>
+                        <input type="tel" x-model="form.nowa" required
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800"
+                            placeholder="Nomor WhatsApp aktif">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-gray-800 mb-1">
                             Asal Instansi/Desa <span class="text-red-500">*</span>
                         </label>
                         <input type="text" x-model="form.asal" required
-                            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800"
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800"
                             placeholder="Nama instansi atau desa">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-bold text-gray-800 mb-2">
+                        <label class="block text-sm font-bold text-gray-800 mb-1">
                             Keperluan <span class="text-red-500">*</span>
                         </label>
                         <textarea x-model="form.keperluan" required rows="4"
-                            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800 resize-none"
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-primary/20 focus:border-primary text-gray-800 resize-none"
                             placeholder="Jelaskan keperluan kunjungan..."></textarea>
                     </div>
                 </form>
@@ -195,7 +196,7 @@
         </div>
 
         <!-- Bottom Fixed Buttons -->
-        <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-sm bg-white border-t border-gray-100 px-6 py-4 space-y-3">
+        <div class="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-sm bg-white border-t border-gray-200 px-6 py-4 space-y-3">
             <!-- Step 1 Button -->
             <div x-show="currentStep === 1">
                 <button @click="nextStep" :disabled="!form.bidang"
@@ -224,7 +225,7 @@
 
                 <button @click="submitForm"
                     :disabled="isSubmitting || !form.nama || !form.alamat || !form.asal || !form.keperluan"
-                    class="flex-1 bg-tertiary text-white font-bold py-4 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed">
+                    class="flex-1 bg-green-500 text-white font-bold py-4 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed">
                     <span x-show="!isSubmitting" class="flex items-center justify-center">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -250,7 +251,7 @@
             style="display: none;">
             <div class="bg-white rounded-3xl p-8 w-full max-w-sm text-center">
                 <div class="w-16 h-16 bg-tertiary/20 rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <svg class="w-8 h-8 text-tertiary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
                 </div>
@@ -259,7 +260,7 @@
                     Terima kasih telah mengisi buku tamu. Data kunjungan Anda telah tersimpan.
                 </p>
                 <button @click="showSuccess = false; resetForm()"
-                    class="bg-tertiary w-full py-4 text-white font-bold rounded-xl">
+                    class="bg-green-500 w-full py-4 text-white font-bold rounded-xl">
                     Selesai
                 </button>
             </div>

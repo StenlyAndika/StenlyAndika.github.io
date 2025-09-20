@@ -16,12 +16,50 @@ function guestBookWizard() {
         submitForm() {
             if (!this.form.nama || !this.form.alamat || !this.form.asal || !this.form.keperluan) return;
             this.isSubmitting = true;
-            const self = this;
-            setTimeout(function() {
-                console.log('Guest Book Entry:', { ...self.form, timestamp: new Date().toISOString(), id: Date.now().toString() });
-                self.isSubmitting = false;
-                self.showSuccess = true;
-            }, 1500);
+            // const self = this;
+            // setTimeout(function() {
+            //     console.log('Guest Book Entry:', { ...self.form, timestamp: new Date().toISOString(), id: Date.now().toString() });
+            //     self.isSubmitting = false;
+            //     self.showSuccess = true;
+            // }, 1500);
+            // Format tanggal Indonesia dd-MM-yyyy
+            const today = new Date();
+            const tgl = today.toLocaleDateString("id-ID", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric"
+            });
+
+            const entry = {
+                tgl: tgl,
+                bidang: this.form.bidang,
+                nama: this.form.nama,
+                nowa: this.form.nowa,
+                alamat: this.form.alamat,
+                asal: this.form.asal,
+                keperluan: this.form.keperluan,
+                status: "waiting"
+            };
+
+            const customId = crypto.randomUUID();
+
+            fetch(`https://guest-book-a50a5-default-rtdb.asia-southeast1.firebasedatabase.app/guestBook/${customId}.json`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(entry)
+            })
+            .then(res => {
+                if (!res.ok) throw new Error("Failed to save");
+                return res.json();
+            })
+            .then(data => {
+                this.isSubmitting = false;
+                this.showSuccess = true;
+            })
+            .catch(err => {
+                console.error("Error:", err);
+                this.isSubmitting = false;
+            });
         },
         resetForm() {
             this.currentStep = 1;

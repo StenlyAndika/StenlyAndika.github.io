@@ -74,48 +74,7 @@
                             <p id="tanggal"></p>
                         </h3>
 
-                        <div class="space-y-1.5">
-                            <div>
-                                <span class="text-sm font-bold text-gray-700">Kepala Dinas</span>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-700">Drs. Sahril Hayadi, M.Si</span>
-                                    <span class="text-red-700 bg-red-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
-                                        <div class="w-1.5 h-1.5 bg-red-500 rounded-full mr-1.5"></div>
-                                        Tidak Ada
-                                    </span>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="text-sm font-bold text-gray-700">Kepala Bidang Keuangan dan Aset</span>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-700">Kemdepit, S.Sos., M.Si</span>
-                                    <span class="text-green-700 bg-green-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
-                                        <div class="w-1.5 h-1.5 bg-green-500 rounded-full mr-1.5"></div>
-                                        Ada
-                                    </span>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="text-sm font-bold text-gray-700">Kepala Bidang Pemerintahan Desa</span>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-700">Dede Setiawan, S.Kom., M.Si</span>
-                                    <span class="text-green-700 bg-green-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
-                                        <div class="w-1.5 h-1.5 bg-green-500 rounded-full mr-1.5"></div>
-                                        Ada
-                                    </span>
-                                </div>
-                            </div>
-                            <div>
-                                <span class="text-sm font-bold text-gray-700">Kepala Bidang Pemberdayaan Masyarakat</span>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-700">Weni Susanti, S.Sos., MM</span>
-                                    <span class="text-red-700 bg-red-100 rounded-full px-2 py-1 text-xs font-medium flex items-center">
-                                        <div class="w-1.5 h-1.5 bg-red-500 rounded-full mr-1.5"></div>
-                                        Tidak Ada
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="status-container" class="space-y-1.5"></div>
                     </div>
 
                     <!-- Department Selection -->
@@ -145,6 +104,7 @@
             <!-- Step 2 -->
             <div x-show="currentStep === 2" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-x-4" x-transition:enter-end="opacity-100 translate-x-0">
+                <!-- <p class="text-md font-bold opacity-90 text-center mb-2 mt-1 text-secondary">Isi data pribadi</p> -->
                 <form @submit.prevent="submitForm" class="space-y-4 mt-2">
                     <div>
                         <label class="block text-sm font-bold text-gray-800 mb-1">

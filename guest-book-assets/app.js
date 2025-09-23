@@ -1,31 +1,18 @@
 function tampilkanTanggal() {
     const now = new Date();
 
-    // Nama hari (Senin, Selasa, ...)
-    const hari = new Intl.DateTimeFormat('id-ID', {
-        weekday: 'long',
-        timeZone: 'Asia/Jakarta'
-    }).format(now);
+    const namaHari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    const namaBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                      'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
-    // Jam:Menit (tanpa detik, 24 jam)
-    const jam = new Intl.DateTimeFormat('id-ID', {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-        timeZone: 'Asia/Jakarta'
-    }).format(now);
+    const hari = namaHari[now.getDay()];
+    const jam = String(now.getHours()).padStart(2, '0') + '.' +
+               String(now.getMinutes()).padStart(2, '0');
+    const tanggal = now.getDate();
+    const bulan = namaBulan[now.getMonth()];
+    const tahun = now.getFullYear();
 
-    // Tanggal lengkap (23 September 2025)
-    const tgl = new Intl.DateTimeFormat('id-ID', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-        timeZone: 'Asia/Jakarta'
-    }).format(now);
-
-    // Gabungkan
-    const hasil = `${hari}, ${jam} - ${tgl}`;
-
+    const hasil = `${hari}, ${jam} - ${tanggal} ${bulan} ${tahun}`;
     $('#tanggal').text(hasil);
 }
 

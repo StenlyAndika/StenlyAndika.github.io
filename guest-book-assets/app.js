@@ -7,15 +7,15 @@ function tampilkanTanggal() {
         timeZone: 'Asia/Jakarta'
     }).format(now);
 
-    // Jam:Menit (24 jam, leading zero)
-    const jam = now.toLocaleTimeString('id-ID', {
+    // Jam:Menit (tanpa detik, 24 jam)
+    const jam = new Intl.DateTimeFormat('id-ID', {
         hour: '2-digit',
         minute: '2-digit',
         hour12: false,
         timeZone: 'Asia/Jakarta'
-    });
+    }).format(now);
 
-    // Tanggal lengkap dengan nama bulan (23 September 2025)
+    // Tanggal lengkap (23 September 2025)
     const tgl = new Intl.DateTimeFormat('id-ID', {
         day: 'numeric',
         month: 'long',
@@ -28,6 +28,7 @@ function tampilkanTanggal() {
 
     $('#tanggal').text(hasil);
 }
+
 
 function guestBookWizard() {
     return {

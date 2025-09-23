@@ -28,7 +28,6 @@ function tampilkanTanggal() {
 
     $('#tanggal').text(hasil);
 }
-$(document).ready(function() { tampilkanTanggal(); });
 
 function guestBookWizard() {
     return {
@@ -235,6 +234,8 @@ async function loadStatus() {
         </div>
       `;
     });
+
+    tampilkanTanggal();
 
   } catch (err) {
     console.error("Error loading status:", err);

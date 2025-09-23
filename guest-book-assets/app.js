@@ -1,7 +1,32 @@
 function tampilkanTanggal() {
-    const opsi = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Jakarta' };
-    const tanggal = new Intl.DateTimeFormat('id-ID', opsi).format(new Date());
-    $('#tanggal').text(tanggal);
+    const now = new Date();
+
+    // Nama hari (Senin, Selasa, ...)
+    const hari = new Intl.DateTimeFormat('id-ID', {
+        weekday: 'long',
+        timeZone: 'Asia/Jakarta'
+    }).format(now);
+
+    // Jam:Menit (24 jam, leading zero)
+    const jam = now.toLocaleTimeString('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+        timeZone: 'Asia/Jakarta'
+    });
+
+    // Tanggal lengkap dengan nama bulan (23 September 2025)
+    const tgl = new Intl.DateTimeFormat('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        timeZone: 'Asia/Jakarta'
+    }).format(now);
+
+    // Gabungkan
+    const hasil = `${hari}, ${jam} - ${tgl}`;
+
+    $('#tanggal').text(hasil);
 }
 $(document).ready(function() { tampilkanTanggal(); });
 
@@ -13,6 +38,23 @@ function guestBookWizard() {
         showSuccess: false,
         nextStep() { if (this.currentStep < 2 && this.form.bidang) this.currentStep++; },
         previousStep() { if (this.currentStep > 1) this.currentStep--; },
+
+        checkPejabatStatus() {
+            const warningBox = document.getElementById("warning-offline");
+            if (!this.form.bidang || !pejabatInfo[this.form.bidang]) {
+                warningBox.classList.add("hidden");
+                return;
+            }
+
+            const pejabat = pejabatInfo[this.form.bidang];
+            if (pejabat.status === "offline") {
+                warningBox.textContent = `${pejabat.jabatan} sedang tidak hadir/tidak ada di ruangan.`;
+                warningBox.classList.remove("hidden");
+            } else {
+                warningBox.classList.add("hidden");
+            }
+        },
+
         submitForm() {
             if (!this.form.nama || !this.form.alamat || !this.form.asal || !this.form.keperluan) return;
             this.isSubmitting = true;
@@ -141,10 +183,14 @@ function guestBook() {
     }
 }
 
+let pejabatInfo = {};
+
 async function loadStatus() {
   try {
     const res = await fetch("https://guest-book-info-default-rtdb.asia-southeast1.firebasedatabase.app/guestBookInfo.json");
     const data = await res.json();
+
+    pejabatInfo = {};
 
     const container = document.getElementById("status-container");
     container.innerHTML = "";
@@ -159,20 +205,28 @@ async function loadStatus() {
 
     Object.keys(data).forEach(key => {
       const pejabat = data[key];
+
       const isOnline = pejabat.status === "online";
 
       const statusColor = isOnline ? "text-green-700 bg-green-100" : "text-red-700 bg-red-100";
       const dotColor = isOnline ? "bg-green-500" : "bg-red-500";
       const statusText = isOnline ? "Ada" : "Tidak Ada";
+      const statusAtasan = isOnline ? "text-green-500" : "text-red-500";
 
       // ambil jabatan resmi dari mapping
       const jabatan = bidangMap[pejabat.bidang] || pejabat.bidang;
+
+      pejabatInfo[pejabat.bidang] = {
+        nama: pejabat.nama,
+        jabatan: jabatan,
+        status: pejabat.status
+      };
 
       container.innerHTML += `
         <div>
           <span class="text-sm font-bold text-gray-700">${jabatan}</span>
           <div class="flex justify-between items-center">
-            <span class="text-sm text-gray-700">${pejabat.nama}</span>
+            <span class="text-sm font-bold ${statusAtasan}">${pejabat.nama}</span>
             <span class="${statusColor} rounded-full px-2 py-1 text-xs font-medium flex items-center">
               <div class="w-1.5 h-1.5 ${dotColor} rounded-full mr-1.5"></div>
               ${statusText}

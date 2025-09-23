@@ -236,9 +236,6 @@ async function loadStatus() {
       `;
     });
 
-    document.getElementById("tanggal").textContent =
-      new Date().toLocaleString("id-ID");
-
   } catch (err) {
     console.error("Error loading status:", err);
   }

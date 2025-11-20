@@ -1,0 +1,30 @@
+{
+  "name": "stenlyandika.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "postcss src/styles.css -o css/output.css --minify",
+    "dev": "postcss src/styles.css -o css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StenlyAndika/StenlyAndika.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StenlyAndika/StenlyAndika.github.io/issues"
+  },
+  "homepage": "https://github.com/StenlyAndika/StenlyAndika.github.io#readme",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "postcss-cli": "^11.0.1"
+  }
+}

@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Stenly Andika - Beginner Full-Stack Developer specializing in Web and Mobile Development">
         <meta name="keywords" content="Full-Stack Developer, Web Development, Mobile Development, Laravel, Flutter">
@@ -17,366 +16,459 @@
     </head>
     <body>
       <!-- Header -->
-      <header class="fixed w-full top-0 left-0 z-50 bg-white shadow-md">
-          <nav class="flex justify-between items-center h-16 px-6 max-w-7xl mx-auto" role="navigation" aria-label="Main navigation">
-              <div>
-                  <a href="https://stenlyandika.github.io/" class="font-semibold text-xl text-[#004A99] hover:text-blue-700 transition-colors" aria-label="Stenly Andika Home">
-                      Stenly Andika
-                  </a>
-              </div>
-
-              <!-- Desktop Navigation -->
-              <div class="hidden md:block" id="nav-menu">
-                  <ul class="flex gap-8" role="menubar">
-                      <li role="none"><a href="#home" class="nav-link text-gray-700 hover:text-[#004A99] font-medium transition-colors" role="menuitem">Home</a></li>
-                      <li role="none"><a href="#about" class="nav-link text-gray-700 hover:text-[#004A99] font-medium transition-colors" role="menuitem">About Me</a></li>
-                      <li role="none"><a href="#skills" class="nav-link text-gray-700 hover:text-[#004A99] font-medium transition-colors" role="menuitem">Skills</a></li>
-                      <li role="none"><a href="#work" class="nav-link text-gray-700 hover:text-[#004A99] font-medium transition-colors" role="menuitem">Projects</a></li>
-                  </ul>
-              </div>
-
-              <!-- Mobile menu toggle -->
-              <button class="md:hidden cursor-pointer text-3xl text-gray-700" id="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
-                  <iconify-icon icon="typcn:th-menu-outline" width="24" height="24"></iconify-icon>
-              </button>
-          </nav>
-
-          <!-- Mobile menu -->
-          <div class="hidden bg-white" id="mobile-menu">
-              <ul class="flex flex-col py-4">
-                  <li><a href="#home" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#004A99] transition-colors">Home</a></li>
-                  <li><a href="#about" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#004A99] transition-colors">About Me</a></li>
-                  <li><a href="#skills" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#004A99] transition-colors">Skills</a></li>
-                  <li><a href="#work" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#004A99] transition-colors">Projects</a></li>
+      <header class="hidden md:block fixed w-full top-0 left-0 z-50 bg-white shadow-md">
+        <nav class="flex justify-between items-center h-16 px-4 sm:px-6 w-full md:max-w-7xl mx-auto" role="navigation" aria-label="Main navigation">
+          <div class="shrink-0 min-w-0">
+              <a href="https://stenlyandika.github.io/" class="font-semibold text-[#004A99] hover:text-blue-700 transition-colors sm:whitespace-nowrap" aria-label="Stenly Andika Home">
+                  Stenly Andika
+              </a>
+          </div>
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex" id="nav-menu">
+              <ul class="flex gap-8" role="menubar">
+                  <li role="none"><a href="#home" class="nav-link text-gray-700 hover:text-[#004A99] font-medium transition-colors" role="menuitem">Home</a></li>
+                  <li role="none"><a href="#about" class="nav-link text-gray-700 hover:text-[#004A99] font-medium transition-colors" role="menuitem">About Me</a></li>
+                  <li role="none"><a href="#skills" class="nav-link text-gray-700 hover:text-[#004A99] font-medium transition-colors" role="menuitem">Skills</a></li>
+                  <li role="none"><a href="#projects" class="nav-link text-gray-700 hover:text-[#004A99] font-medium transition-colors" role="menuitem">Projects</a></li>
               </ul>
           </div>
+        </nav>
       </header>
+      <!-- Bottom Mobile Nav -->
+      <nav class="fixed bottom-0 left-0 w-full bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden z-50">
+        <ul class="flex justify-around items-center py-4">
+          <li>
+            <a href="#home" class="flex flex-col items-center text-gray-600 hover:text-[#004A99]">
+              <iconify-icon icon="ci:house-01" width="24"></iconify-icon>
+              <span class="text-xs">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="flex flex-col items-center text-gray-600 hover:text-[#004A99]">
+              <iconify-icon icon="ci:user-square" width="24"></iconify-icon>
+              <span class="text-xs">About</span>
+            </a>
+          </li>
+          <li>
+            <a href="#skills" class="flex flex-col items-center text-gray-600 hover:text-[#004A99]">
+              <iconify-icon icon="ci:window-code-block" width="24"></iconify-icon>
+              <span class="text-xs">Skills</span>
+            </a>
+          </li>
+          <li>
+            <a href="#projects" class="flex flex-col items-center text-gray-600 hover:text-[#004A99]">
+              <iconify-icon icon="ci:tag" width="24"></iconify-icon>
+              <span class="text-xs">Projects</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
       <main>
-          <!--===== HOME =====-->
-          <section class="home bd-grid min-h-screen items-center" id="home">
-            <div class="shapes-container">
-                <div class="shape" data-aos="fade-down-left" data-aos-duration="1500" data-aos-delay="100"></div>
-                <div class="shape" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100"></div>
-                <div class="shape" data-aos="fade-up-right" data-aos-duration="1000" data-aos-delay="200"></div>
-                <div class="shape" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"></div>
-                <div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
-                <div class="shape" data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="100"></div>
-                <div class="shape" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300"></div>
-                <div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="200"></div>
-                <div class="shape" data-aos="fade-down-right" data-aos-duration="500" data-aos-delay="100"></div>
-                <div class="shape" data-aos="zoom-out" data-aos-duration="2000" data-aos-delay="500"></div>
-                <div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="200"></div>
-                <div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="100"></div>
-                <div class="shape" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0"></div>
-                <div class="shape" data-aos="fade-down" data-aos-duration="500" data-aos-delay="0"></div>
-                <div class="shape" data-aos="fade-up-right" data-aos-duration="500" data-aos-delay="100"></div>
-                <div class="shape" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="0"></div>
+          <!-- Home Section -->
+          <section class="home bd-grid md:mt-10 min-h-screen items-start md:items-center" id="home">
+            <div class="absolute inset-0 overflow-hidden z-0">
+              <div class="shape shape-1" data-aos="fade-down-left"></div>
+              <div class="shape shape-2" data-aos="fade-down"></div>
+              <div class="shape shape-3" data-aos="fade-up-right"></div>
+              <div class="shape shape-4" data-aos="fade-up"></div>
+              <div class="shape shape-5" data-aos="fade-down-left"></div>
+              <div class="shape shape-6" data-aos="fade-down-left"></div>
+              <div class="shape shape-7" data-aos="zoom-in"></div>
+              <div class="shape shape-8" data-aos="fade-down-right"></div>
+              <div class="shape shape-9" data-aos="fade-down-right"></div>
+              <div class="shape shape-10" data-aos="zoom-out"></div>
+              <div class="shape shape-11" data-aos="fade-up-right"></div>
+              <div class="shape shape-12" data-aos="fade-down-left"></div>
+              <div class="shape shape-13" data-aos="fade-up"></div>
+              <div class="shape shape-14" data-aos="fade-down"></div>
+              <div class="shape shape-15" data-aos="fade-up-right"></div>
+              <div class="shape shape-16" data-aos="fade-down-left"></div>
             </div>
             <div class="bg-glass">
-              <div class="home-data">
-                  <h1 class="home-title" data-aos="fade-left" data-aos-duration="1200">Hi, There!<br>I Am <span class="home-title-color">Stenly Andika.</span></h1>
-                  <h1 class="home-title cd-headline-small" data-aos="fade-left" data-aos-duration="1200">A Beginner Full-Stack Developer.</span></h1>
-                  <h1 class="home-title cd-headline clip" data-aos="fade-left" data-aos-duration="1200">
-                      <span class="cd-words-wrapper text-color">
-                          <b class="is-visible fw-bold">A Beginner Full-Stack Developer.</b>
-                          <b class="font-bold">Mostly Web and Mobile Development.</b>
-                          <b class="font-bold">I'm doing some piracy tho, and i love it.</b>
-                          <b class="font-bold">Maybe my ancestor used to be a pirate.</b>
-                      </span>
-                  </h1>
-                  <div data-aos="fade-left" data-aos-duration="1200">
-                    <label class="bg-[#004A99] text-white w-sm font-semibold py-2 px-4 rounded shadow card-animated">Contact Me, Link below.</label>
-                  </div>
+              <div class="home-data" data-aos="fade-left" data-aos-duration="1200">
+                <h1 class="home-title"><span class="home-title-color">Hi,</span> There!<br>I Am <span class="home-title-color">Stenly Andika.</span><br>A <span class="home-title-color">Beginner</span> Full-Stack <span class="home-title-color">Developer.</span>.</h1>
+                <div data-aos="fade-left" data-aos-duration="1200">
+                  <p class="home-title mb-4 md:mb-8" id="rotatingText"></p>
+                </div>
+                <p class="bg-[#004A99] text-white inline-block font-semibold py-2 px-4 rounded shadow card-animated">Contact Me, Link below.</p>
               </div>
-              <div class="home-social" data-aos="fade-up" data-aos-duration="1200">
-                  <a href="https://web.facebook.com/Stenly.Andika24/" target="blank" class="home-social-icon"><iconify-icon icon="ic:baseline-facebook"></iconify-icon></a>
-                  <a href="https://github.com/StenlyAndika" target="blank" class="home-social-icon"><iconify-icon icon="mdi:github"></iconify-icon></a>
-                  <a href="https://wa.me/+6281315414388" target="blank" class="home-social-icon"><iconify-icon icon="ic:baseline-whatsapp"></iconify-icon></a>
-                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=stenly.andika@gmail.com" target="blank" class="home-social-icon"><iconify-icon icon="bxl:gmail"></iconify-icon></a>
+              <div class="home-social mt-2" data-aos="fade-up" data-aos-duration="1200">
+                <a href="https://web.facebook.com/Stenly.Andika24/" target="blank" class="home-social-icon"><iconify-icon icon="ic:baseline-facebook"></iconify-icon></a>
+                <a href="https://github.com/StenlyAndika" target="blank" class="home-social-icon"><iconify-icon icon="mdi:github"></iconify-icon></a>
+                <a href="https://wa.me/+6281315414388" target="blank" class="home-social-icon"><iconify-icon icon="ic:baseline-whatsapp"></iconify-icon></a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=stenly.andika@gmail.com" target="blank" class="home-social-icon"><iconify-icon icon="bxl:gmail"></iconify-icon></a>
               </div>
             </div>
           </section>
 
-          <!--===== ABOUT =====-->
-          <section class="about section" id="about">
-              <h2 class="section-title">About Me</h2>
-              <h2 class="section-subtitle text-center mb-8" data-aos="zoom-in" data-aos-duration="1500">
-                  My Name's Stenly Andika.
-              </h2>
-              <div class="about-container bd-grid">
-                  <div class="about-img" data-aos="fade-right" data-aos-duration="1200">
-                      <img src="assets/img/about.jpg" alt="">
+          <!-- About Section -->
+          <section class="w-full relative bg-[#004A99]" id="about">
+            <div class="absolute inset-0 overflow-hidden z-0">
+              <div class="shape [--shape-color:#fff] shape-1" data-aos="fade-down-left"></div>
+              <div class="shape [--shape-color:#fff] shape-2" data-aos="fade-down"></div>
+              <div class="shape [--shape-color:#fff] shape-3" data-aos="fade-up-right"></div>
+              <div class="shape [--shape-color:#fff] shape-4" data-aos="fade-up"></div>
+              <div class="shape [--shape-color:#fff] shape-5" data-aos="fade-down-left"></div>
+              <div class="shape [--shape-color:#fff] shape-6" data-aos="fade-down-left"></div>
+              <div class="shape [--shape-color:#fff] shape-7" data-aos="zoom-in"></div>
+              <div class="shape [--shape-color:#fff] shape-8" data-aos="fade-down-right"></div>
+              <div class="shape [--shape-color:#fff] shape-9" data-aos="fade-down-right"></div>
+              <div class="shape [--shape-color:#fff] shape-10" data-aos="zoom-out"></div>
+              <div class="shape [--shape-color:#fff] shape-11" data-aos="fade-up-right"></div>
+              <div class="shape [--shape-color:#fff] shape-12" data-aos="fade-down-left"></div>
+              <div class="shape [--shape-color:#fff] shape-13" data-aos="fade-up"></div>
+              <div class="shape [--shape-color:#fff] shape-14" data-aos="fade-down"></div>
+              <div class="shape [--shape-color:#fff] shape-15" data-aos="fade-up-right"></div>
+              <div class="shape [--shape-color:#fff] shape-16" data-aos="fade-down-left"></div>
+            </div>
+            <div class="bd-grid center-grid">
+              <div>
+                <div class="title-glass mb-4">
+                  <h2 class="section-title [--text-color:#004A99] [--underline-color:#004A99] text-stroke [--stroke-color:#fff]">About Me</h2>
+                  <h2 class="section-subtitle text-stroke [--stroke-color:#fff] text-center" data-aos="zoom-in" data-aos-duration="1500">
+                      Just a guy who enjoys making apps and solving problems
+                  </h2>
+                </div>
+                <div class="section-content bd-grid">
+                    <div class="justify-self-center" data-aos="fade-right" data-aos-duration="1200">
+                        <img src="assets/img/about.jpg" class="w-[200px] md:w-[300px] rounded-md" alt="">
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="1200">
+                      <div class="grid grid-cols-1 gap-4">
+
+                        <!-- Row 1 (2 columns) -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div class="p-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl">
+                            <div class="text-[18px] md:text-[20px] font-semibold text-stroke [--stroke-color:#fff]">
+
+                              <div class="grid grid-cols-[85px_10px_1fr]">
+                                <span>Name</span>
+                                <span>:</span>
+                                <span>Stenly Andika</span>
+                              </div>
+
+                              <div class="grid grid-cols-[85px_10px_1fr]">
+                                <span>DOB</span>
+                                <span>:</span>
+                                <span>24 Aug 1997</span>
+                              </div>
+
+                              <div class="grid grid-cols-[85px_10px_1fr]">
+                                <span>Address</span>
+                                <span>:</span>
+                                <span>Mukai Mudik</span>
+                              </div>
+
+                            </div>
+                          </div>
+                          <div class="p-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl">
+                            <div class="text-[18px] md:text-[20px] font-semibold text-stroke [--stroke-color:#fff]">
+                              <div class="grid grid-cols-[85px_10px_1fr]">
+                                <span>District</span>
+                                <span>:</span>
+                                <span>Siulak Mukai</span>
+                              </div>
+
+                              <div class="grid grid-cols-[85px_10px_1fr]">
+                                <span>City</span>
+                                <span>:</span>
+                                <span>Kerinci</span>
+                              </div>
+
+                              <div class="grid grid-cols-[85px_10px_1fr]">
+                                <span>Province</span>
+                                <span>:</span>
+                                <span>Jambi</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Row 2 (1 column) -->
+                        <div class="p-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl">
+                          <div data-aos="fade-up" data-aos-duration="1200">
+                            <p class="font-semibold text-[18px] md:text-[20px] text-stroke [--stroke-color:#fff]">I am a beginner Full-Stack Developer with intermediate experience in Web Development and a growing skill set in Mobile Development. <br><br>I’m passionate about staying current with the latest industry trends and always eager to connect with professionals, collaborate, and explore new opportunities in desktop, web, and mobile app development. <br><br>If you’d like to know more about my experience or have any questions, feel free to reach out.</p>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
                   </div>
-                  <div data-aos="fade-up" data-aos-duration="1200">
-                      <!-- <h2 class="about-subtitle">My Name's Stenly Andika</h2> -->
-                      <p class="about-text" style="font-size: 18px;">I am a beginner Full-Stack Developer, with intermediate level of experience in Desktop and Web Development, and beginner level of experience in Mobile Development. <br><br>I am passionate about staying up-to-date with the latest industry trends and eager to connect with industry professionals and explore new job opportunities in the field of desktop, web, and mobile app development. <br><br>Feel free to contact me if you want to learn more about my experience or if you have any questions.</p>
-                  </div>
+                </div>
               </div>
           </section>
 
-          <!--===== SKILLS =====-->
-          <section class="skills section" id="skills">
-              <h2 class="section-title">Skills</h2>
-              <h2 class="section-subtitle text-center mb-8" data-aos="zoom-in" data-aos-duration="1500">
-                  These are some of the tools that i used in developing an app.
-              </h2>
-              <div class="skills-container bd-grid text-center">
+          <!-- Skills Section -->
+          <section class="w-full relative" id="skills">
+            <div class="absolute inset-0 overflow-hidden z-0">
+              <div class="shape shape-1" data-aos="fade-down-left"></div>
+              <div class="shape shape-2" data-aos="fade-down"></div>
+              <div class="shape shape-3" data-aos="fade-up-right"></div>
+              <div class="shape shape-4" data-aos="fade-up"></div>
+              <div class="shape shape-5" data-aos="fade-down-left"></div>
+              <div class="shape shape-6" data-aos="fade-down-left"></div>
+              <div class="shape shape-7" data-aos="zoom-in"></div>
+              <div class="shape shape-8" data-aos="fade-down-right"></div>
+              <div class="shape shape-9" data-aos="fade-down-right"></div>
+              <div class="shape shape-10" data-aos="zoom-out"></div>
+              <div class="shape shape-11" data-aos="fade-up-right"></div>
+              <div class="shape shape-12" data-aos="fade-down-left"></div>
+              <div class="shape shape-13" data-aos="fade-up"></div>
+              <div class="shape shape-14" data-aos="fade-down"></div>
+              <div class="shape shape-15" data-aos="fade-up-right"></div>
+              <div class="shape shape-16" data-aos="fade-down-left"></div>
+            </div>
+            <div class="bd-grid center-grid">
+              <div>
+                <div class="title-glass mb-4">
+                  <h2 class="section-title [--text-color:#004A99] [--underline-color:#004A99] text-stroke [--stroke-color:#fff]">Skills</h2>
+                  <h2 class="section-subtitle text-stroke [--stroke-color:#fff] text-center" data-aos="zoom-in" data-aos-duration="1500">
+                      These are some of the tools that i used in developing an app.
+                  </h2>
+                </div>
+                <div class="section-content-lg bd-grid">
+                  <!-- Frontend -->
                   <div data-aos="fade-right" data-aos-duration="1500">
-                      <h2 class="skills-subtitle">Desktop</h2>
-                      <div class="skills-data card-animated transition-all duration-300">
-                          <div class="skills-names flex items-center">
-                              <iconify-icon icon="mdi:language-java" class="skill-icons"></iconify-icon>
-                              <span>Java Swing & FX</span>
-                          </div>
-                          <div class="skills-bar" style="width: 80%;"></div>
-                          <div>
-                              <span>80%</span>
-                          </div>
-                      </div>
+                      <h2 class="skills-subtitle text-stroke [--stroke-color:#fff]">Frontend</h2>
 
-                      <h2 class="skills-subtitle">Web</h2>
-
-                      <div class="skills-data card-animated transition-all duration-300">
-                          <div class="skills-names flex items-center">
-                              <iconify-icon icon="mdi:laravel" class="skill-icons"></iconify-icon>
-                              <span class="skills-name">Laravel 8</span>
+                      <div class="skills-data card-animated bg-[#38BDF8]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:tailwind" class="skill-icons"></iconify-icon>
+                              <span>Tailwind CSS</span>
                           </div>
                           <div class="skills-bar" style="width: 85%;"></div>
-                          <div>
-                              <span>85%</span>
-                          </div>
+                          <div><span>85%</span></div>
                       </div>
 
-                      <div class="skills-data card-animated transition-all duration-300">
-                          <div class="skills-names flex items-center">
-                              <iconify-icon icon="simple-icons:codeigniter" class="skill-icons"></iconify-icon>
-                              <span class="skills-name">Codeigniter 3</span>
+                      <div class="skills-data card-animated bg-[#E34F26]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:language-html5" class="skill-icons"></iconify-icon>
+                              <span>HTML</span>
                           </div>
                           <div class="skills-bar" style="width: 80%;"></div>
-                          <div>
-                              <span>80%</span>
-                          </div>
+                          <div><span>80%</span></div>
                       </div>
 
-                      <div class="skills-data card-animated transition-all duration-300">
-                          <div class="skills-names flex items-center">
-                              <iconify-icon icon="mdi:language-php" class="skill-icons"></iconify-icon>
-                              <span class="skills-name">Native PHP</span>
+                      <div class="skills-data card-animated bg-[#F7DF1E]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:language-javascript" class="skill-icons"></iconify-icon>
+                              <span>JavaScript</span>
                           </div>
                           <div class="skills-bar" style="width: 75%;"></div>
-                          <div>
-                              <span>75%</span>
+                          <div><span>75%</span></div>
+                      </div>
+
+                      <div class="skills-data card-animated bg-[#1572B6]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:language-css3" class="skill-icons"></iconify-icon>
+                              <span>CSS</span>
                           </div>
+                          <div class="skills-bar" style="width: 75%;"></div>
+                          <div><span>75%</span></div>
                       </div>
                   </div>
 
+                  <!-- Backend & Mobile -->
                   <div data-aos="fade-left" data-aos-duration="1500">
-                      <h2 class="skills-subtitle">Mobile</h2>
-                      <div class="skills-data card-animated transition-all duration-300">
-                          <div class="skills-names flex items-center">
+                      <h2 class="skills-subtitle text-stroke [--stroke-color:#fff]">Backend & Mobile</h2>
+
+                      <div class="skills-data card-animated bg-[#54C5F8]">
+                          <div class="flex items-center">
                               <iconify-icon icon="ri:flutter-fill" class="skill-icons"></iconify-icon>
-                              <span class="skills-name">Flutter</span>
+                              <span>Flutter</span>
                           </div>
-                          <div class="skills-bar" style="width: 75%;"></div>
-                          <div>
-                              <span>75%</span>
-                          </div>
+                          <div class="skills-bar" style="width: 85%;"></div>
+                          <div><span>85%</span></div>
                       </div>
 
-                      <h2 class="skills-subtitle">Database & Tools</h2>
-                      <div class="skills-data card-animated transition-all duration-300">
-                          <div class="skills-names flex items-center">
-                              <iconify-icon icon="ph:file-sql-fill" class="skill-icons"></iconify-icon>
-                              <span class="skills-name">SQL</span>
+                      <div class="skills-data card-animated bg-[#FF2D20]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:laravel" class="skill-icons"></iconify-icon>
+                              <span>Laravel</span>
                           </div>
-                          <div class="skills-bar" style="width: 75%;"></div>
-                          <div>
-                              <span>75%</span>
-                          </div>
+                          <div class="skills-bar" style="width: 85%;"></div>
+                          <div><span>85%</span></div>
                       </div>
 
-                      <div class="skills-data card-animated transition-all duration-300">
-                          <div class="skills-names flex items-center">
-                              <iconify-icon icon="mdi:microsoft-visual-studio" class="skill-icons"></iconify-icon>
-                              <span class="skills-name">Visual Studio Code</span>
+                      <div class="skills-data card-animated bg-[#3C873A]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:nodejs" class="skill-icons"></iconify-icon>
+                              <span>Node.js</span>
                           </div>
                           <div class="skills-bar" style="width: 80%;"></div>
-                          <div>
-                              <span>80%</span>
-                          </div>
+                          <div><span>80%</span></div>
                       </div>
 
-                      <div class="skills-data card-animated transition-all duration-300">
-                          <div class="skills-names flex items-center">
-                              <iconify-icon icon="mdi:git" class="skill-icons"></iconify-icon>
-                              <span class="skills-name">Github</span>
+                      <div class="skills-data card-animated bg-[#EE4323]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="simple-icons:codeigniter" class="skill-icons"></iconify-icon>
+                              <span>CodeIgniter</span>
                           </div>
                           <div class="skills-bar" style="width: 75%;"></div>
-                          <div>
-                              <span>75%</span>
+                          <div><span>75%</span></div>
+                      </div>
+
+                      <div class="skills-data card-animated bg-[#3776AB]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="lineicons:python" class="skill-icons"></iconify-icon>
+                              <span>Python</span>
                           </div>
+                          <div class="skills-bar" style="width: 75%;"></div>
+                          <div><span>75%</span></div>
                       </div>
                   </div>
+
+                  <!-- Tools -->
+                  <div data-aos="fade-left" data-aos-duration="1500">
+                      <h2 class="skills-subtitle text-stroke [--stroke-color:#fff]">Tools</h2>
+
+                      <div class="skills-data card-animated bg-[#0DB7ED]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:docker" class="skill-icons"></iconify-icon>
+                              <span>Docker</span>
+                          </div>
+                          <div class="skills-bar" style="width: 75%;"></div>
+                          <div><span>75%</span></div>
+                      </div>
+
+                      <div class="skills-data card-animated bg-[#007ACC]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:microsoft-visual-studio" class="skill-icons"></iconify-icon>
+                              <span>Visual Studio Code</span>
+                          </div>
+                          <div class="skills-bar" style="width: 85%;"></div>
+                          <div><span>85%</span></div>
+                      </div>
+
+                      <div class="skills-data card-animated bg-[#F1502F]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:git" class="skill-icons"></iconify-icon>
+                              <span>Git & GitHub</span>
+                          </div>
+                          <div class="skills-bar" style="width: 75%;"></div>
+                          <div><span>75%</span></div>
+                      </div>
+
+                      <div class="skills-data card-animated bg-[#00A67E]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:api" class="skill-icons"></iconify-icon>
+                              <span>API</span>
+                          </div>
+                          <div class="skills-bar" style="width: 75%;"></div>
+                          <div><span>75%</span></div>
+                      </div>
+
+                      <div class="skills-data card-animated bg-[#AA55FF]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:thunder-circle" class="skill-icons"></iconify-icon>
+                              <span>Thunder Client</span>
+                          </div>
+                          <div class="skills-bar" style="width: 75%;"></div>
+                          <div><span>75%</span></div>
+                      </div>
+
+                      <div class="skills-data card-animated bg-[#0E9CD6]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="simple-icons:laragon" class="skill-icons"></iconify-icon>
+                              <span>Laragon</span>
+                          </div>
+                          <div class="skills-bar" style="width: 75%;"></div>
+                          <div><span>75%</span></div>
+                      </div>
+                  </div>
+
+                  <!-- Database & DevOps -->
+                  <div data-aos="fade-left" data-aos-duration="1500">
+                      <h2 class="skills-subtitle text-stroke [--stroke-color:#fff]">Database & DevOps</h2>
+
+                      <div class="skills-data card-animated bg-[#FFCA28]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="mdi:firebase" class="skill-icons"></iconify-icon>
+                              <span>Firebase</span>
+                          </div>
+                          <div class="skills-bar" style="width: 75%;"></div>
+                          <div><span>75%</span></div>
+                      </div>
+
+                      <div class="skills-data card-animated bg-[#00618A]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="ph:file-sql-fill" class="skill-icons"></iconify-icon>
+                              <span>SQL</span>
+                          </div>
+                          <div class="skills-bar" style="width: 75%;"></div>
+                          <div><span>75%</span></div>
+                      </div>
+
+                      <div class="skills-data card-animated bg-[#F1662A]">
+                          <div class="flex items-center">
+                              <iconify-icon icon="simple-icons:phpmyadmin" class="skill-icons"></iconify-icon>
+                              <span>phpMyAdmin</span>
+                          </div>
+                          <div class="skills-bar" style="width: 75%;"></div>
+                          <div><span>75%</span></div>
+                      </div>
+                  </div>
+                </div>
               </div>
+            </div>
           </section>
 
-          <!--===== WORK =====-->
-          <section class="work section" id="work">
-              <h2 class="section-title">Project</h2>
-              <h2 class="section-subtitle text-center mb-8" data-aos="zoom-in" data-aos-duration="1500">
-                  Some project that i've done.
-              </h2>
-              <div class="work-container bd-grid" style="text-align: left;">
-                  <div data-aos="fade-up" data-aos-duration="1500">
-                      <a href="#" class="work-img">
-                          <img src="assets/img/work1.jpg" alt="">
-                      </a>
+          <!-- Project Section -->
+          <section class="w-full relative bg-[#004A99]" id="projects">
+            <div class="absolute inset-0 overflow-hidden z-0">
+              <div class="shape [--shape-color:#fff] shape-1" data-aos="fade-down-left"></div>
+              <div class="shape [--shape-color:#fff] shape-2" data-aos="fade-down"></div>
+              <div class="shape [--shape-color:#fff] shape-3" data-aos="fade-up-right"></div>
+              <div class="shape [--shape-color:#fff] shape-4" data-aos="fade-up"></div>
+              <div class="shape [--shape-color:#fff] shape-5" data-aos="fade-down-left"></div>
+              <div class="shape [--shape-color:#fff] shape-6" data-aos="fade-down-left"></div>
+              <div class="shape [--shape-color:#fff] shape-7" data-aos="zoom-in"></div>
+              <div class="shape [--shape-color:#fff] shape-8" data-aos="fade-down-right"></div>
+              <div class="shape [--shape-color:#fff] shape-9" data-aos="fade-down-right"></div>
+              <div class="shape [--shape-color:#fff] shape-10" data-aos="zoom-out"></div>
+              <div class="shape [--shape-color:#fff] shape-11" data-aos="fade-up-right"></div>
+              <div class="shape [--shape-color:#fff] shape-12" data-aos="fade-down-left"></div>
+              <div class="shape [--shape-color:#fff] shape-13" data-aos="fade-up"></div>
+              <div class="shape [--shape-color:#fff] shape-14" data-aos="fade-down"></div>
+              <div class="shape [--shape-color:#fff] shape-15" data-aos="fade-up-right"></div>
+              <div class="shape [--shape-color:#fff] shape-16" data-aos="fade-down-left"></div>
+            </div>
+            <div class="bd-grid center-grid">
+              <div>
+                <div class="title-glass mb-4">
+                  <h2 class="section-title [--text-color:#004A99] [--underline-color:#004A99] text-stroke [--stroke-color:#fff]">Project</h2>
+                  <h2 class="section-subtitle text-stroke [--stroke-color:#fff] text-center" data-aos="zoom-in" data-aos-duration="1500">
+                      A look at what I’ve been building recently
+                  </h2>
+                </div>
+                <div class="section-content bd-grid">
+                  <div class="w-full py-12 flex flex-col items-center justify-center bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 text-center" data-aos="fade-up" data-aos-duration="1200">
+                    <h1 class="text-2xl md:text-3xl font-semibold text-stroke [--stroke-color:#fff]">
+                      Under Development
+                    </h1>
+                    <p class="mt-2 text-[16px] md:text-[18px] text-white/80 max-w-[500px]">
+                      I'm currently working on exciting new projects.<br>
+                      Stay tuned — more updates coming soon.
+                    </p>
                   </div>
-                  <div data-aos="fade-left" data-aos-duration="1500">
-                      <h2 class="skills-subtitle">Sistem Informasi Rekam Medis Puskesmas Siulak Mukai</h2>
-                      <h4 class="skills-text">
-                          <table border="0">
-                              <tr>
-                                  <td>Platform</td>
-                                  <td>:</td>
-                                  <td>Desktop</td>
-                              </tr>
-                              <tr>
-                                  <td>Tools</td>
-                                  <td>:</td>
-                                  <td>JavaFX 8 - MySQL</td>
-                              </tr>
-                          </table>
-                      </h4>
-                  </div>
-                  <div data-aos="fade-up" data-aos-duration="1500">
-                      <a href="https://sungaipenuhkota.go.id" target="_blank" class="work-img">
-                          <img src="assets/img/work2.jpg" alt="">
-                      </a>
-                  </div>
-                  <div data-aos="fade-left" data-aos-duration="1500">
-                      <h2 class="skills-subtitle">Website Kota Sungai Penuh</h2>
-                      <h4 class="skills-text">
-                          <table border="0">
-                              <tr>
-                                  <td>Platform</td>
-                                  <td>:</td>
-                                  <td>Web</td>
-                              </tr>
-                              <tr>
-                                  <td>Tools</td>
-                                  <td>:</td>
-                                  <td>Laravel 8 - MySQL</td>
-                              </tr>
-                              <tr>
-                                  <td><a href="https://sungaipenuhkota.go.id" target="_blank">Visit Sites</a></td>
-                              </tr>
-                          </table>
-                      </h4>
-                  </div>
-                  <div data-aos="fade-up" data-aos-duration="1500">
-                      <a href="http://disdukcapil.sungaipenuhkota.go.id/" target="_blank" class="work-img">
-                          <img src="assets/img/work3.jpg" alt="">
-                      </a>
-                  </div>
-                  <div data-aos="fade-left" data-aos-duration="1500">
-                      <h2 class="skills-subtitle">Website Dinas Kependudukan dan Pencatatan Sipil Kota Sungai Penuh</h2>
-                      <h4 class="skills-text">
-                          <table border="0">
-                              <tr>
-                                  <td>Platform</td>
-                                  <td>:</td>
-                                  <td>Web</td>
-                              </tr>
-                              <tr>
-                                  <td>Tools</td>
-                                  <td>:</td>
-                                  <td>Laravel 8 - MySQL</td>
-                              </tr>
-                              <tr>
-                                  <td><a href="http://disdukcapil.sungaipenuhkota.go.id/" target="_blank">Visit Sites</a></td>
-                              </tr>
-                          </table>
-                      </h4>
-                  </div>
-                  <div data-aos="fade-up" data-aos-duration="1500">
-                      <a href="http://pkmdesagedang.sungaipenuhkota.go.id/" target="_blank" class="work-img">
-                          <img src="assets/img/work4.jpg" alt="">
-                      </a>
-                  </div>
-                  <div data-aos="fade-left" data-aos-duration="1500">
-                      <h2 class="skills-subtitle">Website Puskesmas Desa Gedang Kota Sungai Penuh</h2>
-                      <h4 class="skills-text">
-                          <table border="0">
-                              <tr>
-                                  <td>Platform</td>
-                                  <td>:</td>
-                                  <td>Web</td>
-                              </tr>
-                              <tr>
-                                  <td>Tools</td>
-                                  <td>:</td>
-                                  <td>Laravel 8 - MySQL</td>
-                              </tr>
-                              <tr>
-                                  <td><a href="http://pkmdesagedang.sungaipenuhkota.go.id/" target="_blank">Visit Sites</a></td>
-                              </tr>
-                          </table>
-                      </h4>
-                  </div>
-                  <div data-aos="fade-up" data-aos-duration="1500">
-                      <a href="http://pkmrawang.sungaipenuhkota.go.id/" target="_blank" class="work-img">
-                          <img src="assets/img/work5.jpg" alt="">
-                      </a>
-                  </div>
-                  <div data-aos="fade-left" data-aos-duration="1500">
-                      <h2 class="skills-subtitle">Website Puskesmas Rawang Kota Sungai Penuh</h2>
-                      <h4 class="skills-text">
-                          <table border="0">
-                              <tr>
-                                  <td>Platform</td>
-                                  <td>:</td>
-                                  <td>Web</td>
-                              </tr>
-                              <tr>
-                                  <td>Tools</td>
-                                  <td>:</td>
-                                  <td>Laravel 8 - MySQL</td>
-                              </tr>
-                              <tr>
-                                  <td><a href="http://pkmrawang.sungaipenuhkota.go.id/" target="_blank">Visit Sites</a></td>
-                              </tr>
-                          </table>
-                      </h4>
-                  </div>
+                </div>
               </div>
+            </div>
           </section>
+
       </main>
 
       <!--===== FOOTER =====-->
-      <footer class="footer">
-          <p class="footer__copy">Stenly Andika &#169; 2019-<span id="currentYear"></span>. All rigths reserved.</p>
+      <footer class="hidden md:block footer">
+          <p>Stenly Andika &#169; 2019-<span id="currentYear"></span>. All rigths reserved.</p>
       </footer>
+
+
 
       <!--===== MAIN JS =====-->
       <script src="assets/vendor/jquery/jquery.min.js"></script>
       <script src="assets/vendor/aos/aos.js"></script>
       <script src="assets/vendor/animated-text/animated-text.js"></script>
-      <script src="assets/js/main.js"></script>
-      <script>
-          $(document).ready(function() {
-              AOS.init({
-                  once: true
-              });
-
-              var currentDate = new Date();
-              var currentYear = currentDate.getFullYear();
-
-              var spanElement = document.getElementById('currentYear');
-
-              spanElement.textContent = currentYear;
-          })
-      </script>
-    </body>
+      <script type="module" src="assets/js/main.js"></script>
+  </body>
 </html>

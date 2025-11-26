@@ -5,8 +5,8 @@
   "main": "postcss.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "postcss src/styles.css -o css/output.css --minify",
-    "dev": "postcss src/styles.css -o css/output.css --watch"
+    "build": "postcss src/styles.css -o assets/css/output.css --minify",
+    "dev": "postcss src/styles.css -o assets/css/output.css --watch"
   },
   "repository": {
     "type": "git",

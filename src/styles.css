@@ -123,12 +123,11 @@ html {
 }
 
 .skills-data {
-  /* @apply p-2 rounded-md flex justify-between items-center relative font-semibold mb-6 shadow-md bg-linear-to-r from-[#004A99] via-[#006AB0] to-[#009EC5] text-white; */
   @apply p-2 rounded-md flex justify-between items-center relative font-semibold mb-6 shadow-md text-white;
 }
 
 .skill-icons {
-  @apply text-4xl mr-8 text-white;
+  @apply text-4xl mr-4 text-white;
 }
 
 .skills-bar {

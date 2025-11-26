@@ -7,12 +7,11 @@ $('.card-animated').on('mousemove', function (e) {
     });
 });
 
-import { animate, splitText, stagger } from '../vendor/animejs/anime.esm.min.js';
+import { animate, splitText, stagger } from 'https://esm.sh/animejs';
 
 const lines = [
   "Turning caffeine into features since day one.",
   "My superpower? Googling errors like a pro.",
-  "I swear my code works… on my machine.",
   "Pretending I know what I'm doing… and it's working."
 ];
 
